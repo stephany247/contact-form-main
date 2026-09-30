@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Contact form</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <div class="contact-container">
+        <!-- Success message -->
+        <div class="success-message" id="successMessage" role="alert">
+          <div class="success-title">
+            <i class="fa-regular fa-circle-check"></i>
+            <strong>Message Sent!</strong>
+          </div>
+
+          <p>Thanks for completing the form. We'll be in touch soon!</p>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <h1>Contact Us</h1>
+
+          <!-- Name -->
+          <div class="name-fields">
+            <div class="form-group">
+              <label for="firstName"> First Name <span>*</span> </label>
+
+              <input type="text" id="firstName" name="firstName" required />
+
+              <small class="error"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="lastName"> Last Name <span>*</span> </label>
+
+              <input type="text" id="lastName" name="lastName" required />
+
+              <small class="error"></small>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email"> Email Address <span>*</span> </label>
+
+            <input type="email" id="email" name="email" required />
+
+            <small class="error"></small>
+          </div>
+
+          <!-- Query Type -->
+          <fieldset class="query-field">
+            <legend>Query Type <span>*</span></legend>
+
+            <div class="query-options">
+              <label class="query-option">
+                <input
+                  type="radio"
+                  name="queryType"
+                  value="General Enquiry"
+                  required
+                />
+
+                <span class="radio"></span>
+
+                <p>General Enquiry</p>
+              </label>
+
+              <label class="query-option">
+                <input type="radio" name="queryType" value="Support Request" />
+
+                <span class="radio"></span>
+
+                <p>Support Request</p>
+              </label>
+            </div>
+
+            <small class="error query-error">
+              Please select a query type
+            </small>
+          </fieldset>
+
+          <!-- Message -->
+          <div class="form-group">
+            <label for="message"> Message <span>*</span> </label>
+
+            <textarea id="message" name="message" required></textarea>
+
+            <small class="error"></small>
+          </div>
+
+          <!-- Consent -->
+          <div class="consent">
+            <label for="consent">
+              <input type="checkbox" id="consent" name="consent" required />
+
+              <span class="checkbox"></span>
+
+              <p>I consent to being contacted by the team <strong>*</strong></p>
+            </label>
+
+            <small class="error consent-error">
+              To submit this form, please consent to being contacted
+            </small>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </main>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
