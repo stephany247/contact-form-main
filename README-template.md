@@ -1,6 +1,7 @@
 # Frontend Mentor - Contact form solution
 
-This is a solution to the [Contact form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Contact form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj).
+The project is a responsive contact form built from scratch with semantic HTML, CSS, and vanilla JavaScript. It includes custom form validation, responsive layouts, interactive states, and an animated success notification.
 
 ## Table of contents
 
@@ -14,10 +15,7 @@ This is a solution to the [Contact form challenge on Frontend Mentor](https://ww
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
   - [AI Collaboration](#ai-collaboration)
-- [Author](#author)
 - [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -36,20 +34,14 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./assets/images/screencapture-contact-form.png)
+![](./assets/images/screencapture-contact-form-main.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-  Live Site URL: [Live Demo here](https://stephany247.github.io/contact-form-main/)
+- Solution URL: [Github Repo](https://github.com/stephany247/contact-form-main)
 
 ## My process
 
@@ -60,69 +52,82 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Vanilla JavaScript
+- Custom form validation
+- CSS transitions and animations
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+UThis project helped me improve my understanding of building interactive forms without relying on a framework or external validation library.
 
-To see how you can add code snippets, see below:
+One of the main things I practiced was creating custom validation states with JavaScript. Instead of relying entirely on the browser's default validation UI, I used novalidate and handled the validation manually.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+For example:
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+if (firstName.value.trim() === "") {
+  showError(firstName, "This field is required");
+  isValid = false;
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+I also learned how to create custom radio buttons and checkboxes while keeping the actual form inputs accessible.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+Another important part of the project was creating an animated success notification using CSS transforms and transitions:
+
+```css
+.success-message {
+  transform: translate(-50%, -150%);
+  opacity: 0;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.success-message.show {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+```
+
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+For future projects, I want to continue improving:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Accessibility and screen reader support.
+- More advanced form validation.
+- Keyboard navigation and focus - management.
+- Writing cleaner and more reusable - JavaScript functions.
+- Creating smoother and more accessible animations.
+- Improving my understanding of semantic - HTML.
+- Building more complex projects without relying heavily on frameworks.
+
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Frontend Mentor](https://www.frontendmentor.io/) - The platform and challenge used for this project.
+- [MDN Web Docs](https://developer.mozilla.org/) - Helpful reference for HTML, CSS, JavaScript, form validation, and browser APIs.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ### AI Collaboration
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
+I used ChatGPT as a development assistant during this project.
 
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
+I mainly used AI to:
 
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
+- Debug JavaScript validation logic.
+- Improve custom form error states.
+- Troubleshoot the success notification animation.
+- Review and refine CSS.
+- Discuss responsive layout decisions.
+- Improve the structure and documentation of the project.
 
-## Author
+AI was used as a supporting tool rather than as a replacement for understanding the implementation. I reviewed the suggestions, adapted the code to the project, and tested the changes in the browser.
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+Thanks to Frontend Mentor for providing the challenge and design resources.
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I also used ChatGPT as a development assistant for debugging, implementation ideas, and improving the project's validation and interactive states.
