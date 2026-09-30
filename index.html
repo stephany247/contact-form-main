@@ -37,7 +37,12 @@
     <main class="page">
       <div class="contact-container">
         <!-- Success message -->
-        <div class="success-message" id="successMessage" role="alert">
+        <div
+          class="success-message"
+          id="successMessage"
+          role="alert"
+          aria-hidden="true"
+        >
           <div class="success-title">
             <i class="fa-regular fa-circle-check"></i>
             <strong>Message Sent!</strong>
@@ -53,17 +58,37 @@
             <div class="form-group">
               <label for="firstName"> First Name <span>*</span> </label>
 
-              <input type="text" id="firstName" name="firstName" required />
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                aria-describedby="firstName-error"
+                aria-invalid="false"
+              />
 
-              <small class="error"></small>
+              <small
+                class="error"
+                id="firstName-error"
+                aria-live="polite"
+              ></small>
             </div>
 
             <div class="form-group">
               <label for="lastName"> Last Name <span>*</span> </label>
 
-              <input type="text" id="lastName" name="lastName" required />
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                aria-describedby="lastName-error"
+                aria-invalid="false"
+              />
 
-              <small class="error"></small>
+              <small
+                class="error"
+                id="lastName-error"
+                aria-live="polite"
+              ></small>
             </div>
           </div>
 
@@ -71,23 +96,24 @@
           <div class="form-group">
             <label for="email"> Email Address <span>*</span> </label>
 
-            <input type="email" id="email" name="email" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              aria-describedby="email-error"
+              aria-invalid="false"
+            />
 
-            <small class="error"></small>
+            <small class="error" id="email-error" aria-live="polite"></small>
           </div>
 
           <!-- Query Type -->
-          <fieldset class="query-field">
+          <fieldset class="query-field" aria-describedby="query-error">
             <legend>Query Type <span>*</span></legend>
 
             <div class="query-options">
               <label class="query-option">
-                <input
-                  type="radio"
-                  name="queryType"
-                  value="General Enquiry"
-                  required
-                />
+                <input type="radio" name="queryType" value="General Enquiry" />
 
                 <span class="radio"></span>
 
@@ -103,7 +129,11 @@
               </label>
             </div>
 
-            <small class="error query-error">
+            <small
+              class="error query-error"
+              id="query-error"
+              aria-live="polite"
+            >
               Please select a query type
             </small>
           </fieldset>

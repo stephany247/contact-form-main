@@ -158,7 +158,6 @@ textarea:hover {
 .query-option input {
   position: absolute;
   opacity: 0;
-  pointer-events: none;
 }
 
 /* Custom radio */
@@ -246,6 +245,12 @@ textarea:hover {
   font-weight: 700;
 }
 
+.query-option:has(input:focus-visible),
+.consent:has(input:focus-visible) .checkbox {
+  outline: 2px solid var(--green-600);
+  outline-offset: 3px;
+}
+
 /* Submit button */
 
 button {
@@ -268,7 +273,7 @@ button {
 }
 
 button:hover {
-  background-color: var(--grey-900)
+  background-color: var(--grey-900);
 }
 
 /* Error messages */

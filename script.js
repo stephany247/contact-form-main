@@ -49,6 +49,9 @@ form.addEventListener("submit", function (event) {
 
   if (!querySelected) {
     queryField.classList.add("invalid");
+    queryOptions.forEach((option) => {
+      option.setAttribute("aria-invalid", "true");
+    });
     isValid = false;
   }
 
@@ -69,13 +72,18 @@ form.addEventListener("submit", function (event) {
   // Submit
   if (isValid) {
     form.reset();
+    document.querySelectorAll("[aria-invalid]").forEach((input) => {
+      input.setAttribute("aria-invalid", "false");
+    });
 
     successMessage.classList.remove("hide");
     successMessage.classList.add("show");
+    successMessage.setAttribute("aria-hidden", "hidden");
 
     setTimeout(() => {
       successMessage.classList.remove("show");
       successMessage.classList.add("hide");
+      successMessage.setAttribute("aria-hidden", "true");
     }, 4000);
   }
 });
@@ -84,6 +92,7 @@ function showError(input, message) {
   const formGroup = input.closest(".form-group");
 
   formGroup.classList.add("invalid");
+  input.setAttribute("aria-invalid", "true");
 
   const error = formGroup.querySelector(".error");
 
@@ -134,8 +143,14 @@ message.addEventListener("input", () => {
 
 // Query Type
 queryOptions.forEach((option) => {
-  option.addEventListener("change", () => {
-    queryField.classList.remove("invalid");
+  option.addEventListener("change", function () {
+    if (option.checked) {
+      queryField.classList.remove("invalid");
+
+      queryOptions.forEach((radio) => {
+        radio.setAttribute("aria-invalid", "false");
+      });
+    }
   });
 });
 
@@ -150,6 +165,7 @@ function clearError(input) {
   const formGroup = input.closest(".form-group");
 
   formGroup.classList.remove("invalid");
+  input.setAttribute("aria-invalid", "false");
 
   const error = formGroup.querySelector(".error");
 
