@@ -44,7 +44,10 @@ h1 {
   font-size: 2rem;
   line-height: 1.2;
   font-weight: 700;
+  --grey-900: hsl(190, 68%, 69%);
+
   color: var(--grey-900);
+  border: 3px solid var(--grey-900);
   margin-bottom: 2rem;
 }
 
